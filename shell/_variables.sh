@@ -1,0 +1,1 @@
+RUHOH=$HOME/Writing
