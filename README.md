@@ -16,10 +16,19 @@ git clone git@github.com:douo/douo_config.git ~/.douo
 
 ```shell
 DOUO=$HOME/.douo  # 我的个人配置文件目录
-for f in `ls $DOUO/*.sh | sort -V -r`; # make sure variables load first.
+for f in `ls $DOUO/shell/*.sh | sort -V -r`; # make sure variables load first.
 do
     source $f
 done
 ```
 
+Mac 
+
+```shell
+DOUO=$HOME/.douo  # 我的个人配置文件目录
+for f in `ls $DOUO/*.sh | sort -d -r`; # make sure variables load first.
+do
+    source $f
+done
+```
 
