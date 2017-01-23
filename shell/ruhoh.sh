@@ -50,10 +50,10 @@ ru(){
 rs(){
     if [ "$2" ]; then
        cd "$RUHOH/$1"
-       grep -iRy "$2" --include="*.md"  -Hn -C1 --color=always | less
+       grep -iRy "$2" --include="*.md"  -Hn -C1 --color=always . | less
     else
        cd "$RUHOH"
-       grep -iRy "$1" --include="*.md"  -Hn -C1 --color=always | less
+       grep -iRy "$1" --include="*.md"  -Hn -C1 --color=always . | less
     fi
     cd -
  }
