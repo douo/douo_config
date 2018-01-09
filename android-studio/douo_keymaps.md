@@ -97,12 +97,13 @@ Android Studio 将 `M-g` 作为跳转到行数，我改其作为前置键，同�
 
 | 快捷键     | 功能      | 关键字              | 自定义 |  
 | ------- | ------- | ---------------- | --- |  
-| `C-M-f` | 上一个位置   | forward          | *   |  
-| `C-M-b` | 下一个位置   | back             | *   |  
+| `C-M-f` | 上一个位置   | forward           | *   |  
+| `C-M-b` | 下一个位置   | back              | *   |  
 | `C-M-g` | 跳转到定义处  | declaration      |     |  
-| `C-M-G` | 跳转到类型   | type declaration | *   |  
+| `C-M-G` | 跳转到类型   | type declaration  | *   |  
 | `C-M-u` | 跳转到父类方法 | super method     | *   |  
-| `M-←/→` | 左右切换标签  | select tab       |     |  
+| `C-M-p` | 跳转到实现方法 | implementation(s)| *   |  
+| `M-←/→` | 左右切换标签  | select tab        |     |  
 
 如果对简洁有要求或者屏幕太小（比如我），可以将 Android Studio 的标签关掉，具体参考：[Configuring Behavior of the Editor Tabs][3]，那么这时 `M-←/→` 就不会起作用了。
 
