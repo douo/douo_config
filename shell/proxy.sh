@@ -1,34 +1,9 @@
 # Copy from https://wiki.archlinux.org/index.php/Proxy_settings
-
+# modified 2018-05-29
 
 function proxy_on() {
-    export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
-
-    if (( $# > 0 )); then
-        valid=$(echo $@ | sed -n 's/\([0-9]\{1,3\}.\)\{4\}:\([0-9]\+\)/&/p')
-        if [[ $valid != $@ ]]; then
-            >&2 echo "Invalid address"
-            return 1
-        fi
-
-        export http_proxy="http://$1/"
-        export https_proxy=$http_proxy
-        export ftp_proxy=$http_proxy
-        export rsync_proxy=$http_proxy
-        echo "Proxy environment variable set."
-        return 0
-    fi
-
-    echo -n "username: "; read username
-    if [[ $username != "" ]]; then
-        echo -n "password: "
-        read -es password
-        local pre="$username:$password@"
-    fi
-
-    echo -n "server: "; read server
-    echo -n "port: "; read port
-    export http_proxy="http://$pre$server:$port/"
+    polipo socksParentProxy=localhost:1080 &
+    export http_proxy="http://localhost:8123/"
     export https_proxy=$http_proxy
     export ftp_proxy=$http_proxy
     export rsync_proxy=$http_proxy
