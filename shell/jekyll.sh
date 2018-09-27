@@ -22,11 +22,11 @@ writing()
 
 writing-commit(){
     if [ "$1" ]; then
-        git add -A :/$1
-        git commit -m 'update $1'
+        git add -A $1
+        git commit -m 'update $1' -n
     else
         git add -A :/
-        git commit -m 'update all'
+        git commit -m 'update all' -n
     fi
 }
 
@@ -56,6 +56,6 @@ rs(){
         cd "$WRITING"
     fi
     # "*\#*" emacs 临时文件
-    grep -iRy "$1" --include="*.md"  --exclude="*_sass*" --exclude="*_site*" --exclude="*\#*" -Hn -C1 --color=always . | less
+    grep -iRy "$1" --include="*.md" --exclude="*node_modules*" --exclude="*_sass*" --exclude="*_site*" --exclude="*\#*" -Hn -C1 --color=always . | less
     cd -
 }
