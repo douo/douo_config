@@ -23,10 +23,10 @@ writing()
 writing-commit(){
     if [ "$1" ]; then
         git add -A $1
-        git commit -m 'update $1' -n
+        git commit -m "update $1" -n
     else
         git add -A :/
-        git commit -m 'update all' -n
+        git commit -m "update all" -n
     fi
 }
 
